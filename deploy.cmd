@@ -56,8 +56,13 @@ echo Downloading Dependencies
 IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	SET COMPOSER_INSTALL_PATH=%DEPLOYMENT_TARGET%\web\bin
 	
+	IF NOT DEFINED COMPOSER_PHAR_PATH (
+		SET COMPOSER_PHAR_PATH="%appdata%\composer"
+		mkdir "%appdata%\composer"
+	)
+	
 	echo Downloading Composer
-	pushd %ARTIFACTS%
+	pushd %COMPOSER_PHAR_PATH%
 	
 	curl -sS -o composer.phar https://getcomposer.org/installer | php -- --install-dir %COMPOSER_INSTALL_PATH%
 	popd
@@ -65,7 +70,7 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-php %ARTIFACTS%\composer.phar install
+php %COMPOSER_PHAR_PATH%\composer.phar install
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
