@@ -53,13 +53,13 @@ IF NOT DEFINED KUDU_SYNC_CMD (
 
 echo Downloading Dependencies
 
-IF NOT DEFINED COMPOSER_PHAR_PATH {
+IF NOT DEFINED COMPOSER_PHAR_PATH (
 	SET COMPOSER_PHAR_PATH=%DEPLOYMENT_TARGET%\bin
 	echo Downloading Composer
 	curl -sS -o 'composer.phar' https://getcomposer.org/installer | php -- --install-dir=%COMPOSER_PHAR_PATH%
 	
 	IF !ERRORLEVEL! NEQ 0 goto error
-}
+)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
