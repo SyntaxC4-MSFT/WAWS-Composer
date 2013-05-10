@@ -65,6 +65,7 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
 
+echo Installing Dependencies
 php %COMPOSER_INSTALL_PATH%\composer.phar install
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
