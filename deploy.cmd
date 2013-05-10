@@ -64,7 +64,7 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 )
 
 echo Installing Dependencies
-php %COMPOSER_INSTALL_PATH%\composer.phar install
+php composer.phar install
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
