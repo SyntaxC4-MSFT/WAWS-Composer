@@ -63,6 +63,8 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
 
+SLEEP 30
+
 echo Installing Dependencies
 php composer.phar install
 
