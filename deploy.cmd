@@ -59,7 +59,7 @@ IF NOT DEFINED COMPOSER_PHAR_PATH (
 	
 	pushd %COMPOSER_PHAR_PATH%
 	
-	curl -sS -o composer.phar https://getcomposer.org/installer | php -- --install-dir=%COMPOSER_PHAR_PATH%
+	curl -sS -o composer.phar https://getcomposer.org/installer | php
 	
 	popd
 	
