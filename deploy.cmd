@@ -48,10 +48,10 @@ IF NOT DEFINED KUDU_SYNC_CMD (
 )
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Dependencies
-:: ------------
+:: Download Composer
+:: -----------------
 
-echo Downloading Dependencies
+echo Downloading Composer
 
 IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	SET COMPOSER_INSTALL_PATH=%DEPLOYMENT_TARGET%\web\bin
@@ -62,11 +62,6 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
-
-SLEEP 30
-
-echo Installing Dependencies
-php composer.phar install
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
@@ -79,6 +74,12 @@ call %KUDU_SYNC_CMD% -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n 
 IF !ERRORLEVEL! NEQ 0 goto error
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::
+:: Dependency Install
+:: ------------------
+
+php %DEPLOYMENT_TARGET%\composer.phar install
 
 goto end
 
