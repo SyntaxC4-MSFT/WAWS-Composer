@@ -61,6 +61,8 @@ IF NOT DEFINED COMPOSER_PHAR_PATH (
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
 
+php composer.phar install
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
 :: ----------
