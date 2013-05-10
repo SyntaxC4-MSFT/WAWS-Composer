@@ -55,7 +55,7 @@ echo Downloading Dependencies
 
 IF NOT DEFINED COMPOSER_PHAR_PATH (
 	SET COMPOSER_PHAR_PATH=%DEPLOYMENT_TARGET%\web\bin
-	echo Downloading Composer
+	echo Downloading Composer %COMPOSER_PHAR_PATH%
 	
 	pushd %COMPOSER_PHAR_PATH%
 	
