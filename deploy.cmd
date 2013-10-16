@@ -58,7 +58,8 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	
 	echo Downloading Composer
 
-	curl -sS -o composer.phar https://getcomposer.org/installer | php -- --install-dir=%COMPOSER_INSTALL_PATH%
+	curl -sS https://getcomposer.org/installer | php
+	php composer.phar install
 	
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
