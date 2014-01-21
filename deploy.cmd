@@ -59,7 +59,7 @@ IF NOT DEFINED COMPOSER_INSTALL_PATH (
 	echo Downloading Composer
 
 	curl -sS https://getcomposer.org/installer | php
-	php composer.phar install
+	php -d extension=php_intl.dll composer.phar install
 	
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
