@@ -12,10 +12,13 @@ try {
     $blob_list = $blobRestProxy->listBlobs("training-kit");
     $blobs = $blob_list->getBlobs();
 
+	echo "<ul>";
     foreach($blobs as $blob)
     {
-        echo $blob->getName().": ".$blob->getUrl()."<br />";
+        echo "<li><a href='".$blob->getUrl()."'>".$blob->getName()."</a></li>";
     }
+	echo "</ul>";
+	
 } catch(ServiceException $e){
     $code = $e->getCode();
     $error_message = $e->getMessage();
