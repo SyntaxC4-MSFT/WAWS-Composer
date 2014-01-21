@@ -1,3 +1,5 @@
+<?php
+
 require_once "../bin/vendor/autoload.php";
 
 use WindowsAzure\Common\ServicesBuilder;
