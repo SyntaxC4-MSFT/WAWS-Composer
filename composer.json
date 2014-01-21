@@ -1,6 +1,6 @@
 {
   "require": {
-      "microsoft/windowsazure": "*"
+      "microsoft/windowsazure": "dev-dev"
   },          
   "repositories": [
       {
