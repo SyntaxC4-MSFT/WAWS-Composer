@@ -9,7 +9,7 @@ $blobRestProxy = ServicesBuilder::getInstance()->createBlobService(getEnv('CUSTO
 
 try {
     // List blobs.
-    $blob_list = $blobRestProxy->listBlobs("training-kit");
+    $blob_list = $blobRestProxy->listBlobs(getenv('container'));
     $blobs = $blob_list->getBlobs();
 
 	echo "<ul>";
