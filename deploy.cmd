@@ -59,10 +59,10 @@ IF NOT DEFINED COMPOSER_VENDOR_DIR (
 	echo Downloading Composer
 
 	curl -sS https://getcomposer.org/installer | php
-	php -d extension=php_intl.dll composer.phar install --prefer-dist --no-dev --optimize-autoloader
 	
 	IF !ERRORLEVEL! NEQ 0 goto error
 )
+php -d extension=php_intl.dll composer.phar install --prefer-dist --no-dev --optimize-autoloader
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
