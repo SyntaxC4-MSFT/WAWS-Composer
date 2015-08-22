@@ -1,12 +1,21 @@
 <?php
 
-require_once "vendor/autoload.php";
+require_once "../vendor/autoload.php";
 
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Common\ServiceException;
 
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService(getEnv('CUSTOMCONNSTR_BlobConnectionString'));
-
+?>
+<html>
+  <head>
+    <title>Show me the Contents!!!</title>
+    <link rel="stylesheet" href="site.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Show me the Contents!!!</h1>
+    
+<?php
 try {
     // List blobs.
     $blob_list = $blobRestProxy->listBlobs(getenv('container'));
@@ -24,3 +33,8 @@ try {
     $error_message = $e->getMessage();
     echo $code.": ".$error_message."<br />";
 }
+
+?>
+
+  </body>
+</html>
