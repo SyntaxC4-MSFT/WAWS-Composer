@@ -17,7 +17,6 @@ Some assembly required.
 | Name     | Value     | Notes    |
 |----------|-----------|----------|
 | container| &lt;azure-storage-container-name&gt; | The container name to display
-| DEPLOYMENT_SOURCE  | web       | Tells kudu to deploy only the `web` directory to `wwwroot`
 
 ### Connection Strings
 
